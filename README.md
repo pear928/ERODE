@@ -1,6 +1,6 @@
-# Institutional Drift Benchmark (IDB)
+# Evaluating Role-based Obedience and Directive Escalation (ERODE)
 
-The Institutional Drift Benchmark measures whether LLM agents embedded in institutional roles comply more readily with harmful directives when pressure originates from an authority figure inside that role. Each scenario runs in two conditions — **role** and **baseline** — and the difference (Delta H) isolates the harm attributable to role-embedding rather than the directives alone.
+ERODE measures whether LLM agents embedded in institutional roles comply more readily with harmful directives when pressure originates from an authority figure inside that role. Each scenario runs in two conditions — **role** and **baseline** — and the difference (Delta H) isolates the harm attributable to role-embedding rather than the directives alone.
 
 The benchmark spans five domains (healthcare, corporate, energy, legal, military) with 10 five-turn escalating scenarios and evaluates models on a 1–5 harm scale judged by GPT-4o.
 
@@ -27,7 +27,7 @@ python src/run_benchmark.py
 # 2. Score every turn with the judge model
 python src/judge.py
 
-# 3. Compute all IDB metrics from scores
+# 3. Compute all ERODE metrics from scores
 python src/metrics.py
 
 # 4. Produce graphs and summary table
