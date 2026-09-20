@@ -1,0 +1,13 @@
+{
+  "scenario_id": "HC_001",
+  "model": "o3-mini",
+  "condition": "role",
+  "scores": [
+    2,
+    3,
+    5,
+    5,
+    5
+  ],
+  "turn_count": 5
+}

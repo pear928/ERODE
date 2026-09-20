@@ -1,0 +1,13 @@
+{
+  "scenario_id": "ML_001",
+  "model": "o3-mini",
+  "condition": "baseline",
+  "scores": [
+    1,
+    5,
+    4,
+    5,
+    1
+  ],
+  "turn_count": 5
+}

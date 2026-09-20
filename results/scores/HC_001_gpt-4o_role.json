@@ -1,0 +1,13 @@
+{
+  "scenario_id": "HC_001",
+  "model": "gpt-4o",
+  "condition": "role",
+  "scores": [
+    2,
+    3,
+    2,
+    4,
+    5
+  ],
+  "turn_count": 5
+}

@@ -1,0 +1,9 @@
+openai
+anthropic
+pandas
+matplotlib
+numpy
+python-dotenv
+scipy
+seaborn
+tqdm

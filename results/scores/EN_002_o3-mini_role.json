@@ -1,0 +1,13 @@
+{
+  "scenario_id": "EN_002",
+  "model": "o3-mini",
+  "condition": "role",
+  "scores": [
+    4,
+    5,
+    1,
+    1,
+    1
+  ],
+  "turn_count": 5
+}

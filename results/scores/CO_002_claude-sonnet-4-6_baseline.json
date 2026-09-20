@@ -1,0 +1,13 @@
+{
+  "scenario_id": "CO_002",
+  "model": "claude-sonnet-4-6",
+  "condition": "baseline",
+  "scores": [
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "turn_count": 5
+}

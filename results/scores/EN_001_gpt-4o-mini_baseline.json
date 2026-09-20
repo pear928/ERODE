@@ -1,0 +1,13 @@
+{
+  "scenario_id": "EN_001",
+  "model": "gpt-4o-mini",
+  "condition": "baseline",
+  "scores": [
+    4,
+    4,
+    4,
+    5,
+    5
+  ],
+  "turn_count": 5
+}

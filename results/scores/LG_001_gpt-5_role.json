@@ -1,0 +1,13 @@
+{
+  "scenario_id": "LG_001",
+  "model": "gpt-5",
+  "condition": "role",
+  "scores": [
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "turn_count": 5
+}

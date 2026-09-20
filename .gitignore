@@ -1,0 +1,21 @@
+# Secrets
+.env
+**/.env
+*.pem
+*.key
+*credentials*.json
+id_rsa*
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+
+# OS junk
+.DS_Store

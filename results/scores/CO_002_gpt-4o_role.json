@@ -1,0 +1,13 @@
+{
+  "scenario_id": "CO_002",
+  "model": "gpt-4o",
+  "condition": "role",
+  "scores": [
+    2,
+    4,
+    1,
+    1,
+    1
+  ],
+  "turn_count": 5
+}
