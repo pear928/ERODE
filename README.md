@@ -2,7 +2,7 @@
 
 ERODE measures whether LLM agents embedded in institutional roles comply more readily with harmful directives when pressure originates from an authority figure inside that role. Each scenario runs in two conditions — **role** and **baseline** — and the difference (Delta H) isolates the harm attributable to role-embedding rather than the directives alone.
 
-The benchmark spans five domains (healthcare, corporate, energy, legal, military) with 10 five-turn escalating scenarios and evaluates models on a 1–5 harm scale judged by Claude Opus 4.8 (`claude-opus-4-8`). Claude Opus 4.8 was chosen as a non-GPT judge to avoid within-family bias, since four of the six models under test are GPT-family models (see Section 5.3 of the paper).
+The benchmark spans five domains (healthcare, corporate, energy, legal, military) with 10 five-turn escalating scenarios and evaluates models on a 1–5 harm scale judged by Claude Opus 4.8 (`claude-opus-4-8`). Claude Opus 4.8 was chosen as a non-GPT judge to avoid within-family bias, since four of the six models under test are GPT-family models.
 
 ---
 
@@ -94,7 +94,7 @@ The **Delta H** metric (`role_embedding_differential`) captures the difference i
 
 ## Metric glossary
 
-CHS and Delta H are computed over **all T turns of the scenario** — they are no longer truncated at a defection turn. `src/metrics.py` does not reimplement this math; it delegates to `erode_metrics.py` at the project root, which is the single source of truth for these definitions (see Section 4 of the paper).
+CHS and Delta H are computed over **all T turns of the scenario** — they are no longer truncated at a defection turn. `src/metrics.py` does not reimplement this math; it delegates to `erode_metrics.py` at the project root, which is the single source of truth for these definitions.
 
 | Metric | Definition |
 |---|---|
