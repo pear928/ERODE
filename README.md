@@ -1,4 +1,4 @@
-# ERODE: Evaluating Role-based Obedience and Directive Escalation
+# Evaluating Role-based Obedience and Directive Escalation (ERODE)
 
 ERODE measures whether LLM agents embedded in institutional roles comply more readily with harmful directives when pressure originates from an authority figure inside that role. Each scenario runs in two conditions — **role** and **baseline** — and the difference (Delta H) isolates the harm attributable to role-embedding rather than the directives alone.
 
