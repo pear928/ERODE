@@ -1,8 +1,8 @@
-# Institutional Drift Benchmark (IDB)
+# ERODE: Evaluating Role-based Obedience and Directive Escalation
 
-The Institutional Drift Benchmark measures whether LLM agents embedded in institutional roles comply more readily with harmful directives when pressure originates from an authority figure inside that role. Each scenario runs in two conditions — **role** and **baseline** — and the difference (Delta H) isolates the harm attributable to role-embedding rather than the directives alone.
+ERODE measures whether LLM agents embedded in institutional roles comply more readily with harmful directives when pressure originates from an authority figure inside that role. Each scenario runs in two conditions — **role** and **baseline** — and the difference (Delta H) isolates the harm attributable to role-embedding rather than the directives alone.
 
-The benchmark spans five domains (healthcare, corporate, energy, legal, military) with 10 five-turn escalating scenarios and evaluates models on a 1–5 harm scale judged by GPT-4o.
+The benchmark spans five domains (healthcare, corporate, energy, legal, military) with 10 five-turn escalating scenarios and evaluates models on a 1–5 harm scale judged by Claude Opus 4.8 (`claude-opus-4-8`). Claude Opus 4.8 was chosen as a non-GPT judge to avoid within-family bias, since four of the six models under test are GPT-family models (see Section 5.3 of the paper).
 
 ---
 
@@ -27,7 +27,7 @@ python src/run_benchmark.py
 # 2. Score every turn with the judge model
 python src/judge.py
 
-# 3. Compute all IDB metrics from scores
+# 3. Compute all ERODE metrics from scores
 python src/metrics.py
 
 # 4. Produce graphs and summary table
@@ -50,7 +50,7 @@ Optional flags for `judge.py`:
 | Script | Purpose |
 |---|---|
 | `run_benchmark.py` | Calls each model under role and baseline conditions across all scenarios; saves multi-turn conversation transcripts as JSON |
-| `judge.py` | Scores every turn in every transcript using GPT-4o; writes per-transcript JSON score files and a master CSV |
+| `judge.py` | Scores every turn in every transcript using Claude Opus 4.8 (`claude-opus-4-8`); writes per-transcript JSON score files and a master CSV |
 | `metrics.py` | Reads score files; computes breach turn (T_b), sustained recovery turn (T_r), drift velocity (escalation rate DV_esc + peak), cumulative harm score (CHS, summed over all T turns), average harm level, and Delta H (also summed over all T turns); delegates to `erode_metrics.py` (project root) as the single source of truth; writes `metrics_summary.csv` |
 | `analysis.py` | Reads `master_scores.csv` and `metrics_summary.csv`; generates six publication-quality graphs and a summary statistics table |
 
@@ -70,12 +70,14 @@ results/
     summary_table.csv                  # per-model aggregate statistics
   graphs/
     drift_curves.png                   # harm trajectory per model (role)
-    defection_histogram.png            # distribution of breach turn T_b per model
-    chs_vs_tstar_scatter.png           # CHS vs breach turn T_b scatter, all models
+    breach_turn_histogram.png          # distribution of breach turn T_b per model
+    chs_vs_breach_turn_scatter.png     # CHS vs breach turn T_b scatter, all models
     domain_comparison.png              # average CHS by domain and model
     delta_H_comparison.png             # role-embedding differential per model
     dv_profile.png                     # drift velocity escalation rate (DV_esc) vs peak scatter
 ```
+
+All scores in `results/scores/` (per-transcript JSON files and `master_scores.csv`) were produced by Claude Opus 4.8 (`claude-opus-4-8`) — the score files themselves don't record which judge model produced them, so this is stated here for provenance.
 
 ---
 

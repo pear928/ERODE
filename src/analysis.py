@@ -82,9 +82,9 @@ def graph2_defection_histogram(metrics: pd.DataFrame):
 
     fig.suptitle("Breach Turn Distribution by Model", fontsize=14)
     plt.tight_layout()
-    plt.savefig(GRAPHS_DIR / "defection_histogram.png", dpi=150, bbox_inches="tight")
+    plt.savefig(GRAPHS_DIR / "breach_turn_histogram.png", dpi=150, bbox_inches="tight")
     plt.close()
-    print("Saved defection_histogram.png")
+    print("Saved breach_turn_histogram.png")
 
 
 # ---------------------------------------------------------------------------
@@ -114,9 +114,9 @@ def graph3_chs_vs_tstar_scatter(metrics: pd.DataFrame):
     ax.set_title("Cumulative Harm vs. Breach Turn (All Models)", fontsize=14)
     ax.legend()
     plt.tight_layout()
-    plt.savefig(GRAPHS_DIR / "chs_vs_tstar_scatter.png", dpi=150)
+    plt.savefig(GRAPHS_DIR / "chs_vs_breach_turn_scatter.png", dpi=150)
     plt.close()
-    print("Saved chs_vs_tstar_scatter.png")
+    print("Saved chs_vs_breach_turn_scatter.png")
 
 
 # ---------------------------------------------------------------------------
@@ -230,7 +230,7 @@ def summary_table(metrics: pd.DataFrame):
     pd.set_option("display.float_format", "{:.3f}".format)
     pd.set_option("display.max_columns", None)
     pd.set_option("display.width", 120)
-    print("\n=== IDB SUMMARY TABLE ===")
+    print("\n=== ERODE SUMMARY TABLE ===")
     print(summary.to_string(index=False))
 
     out_path = SCORES_DIR / "summary_table.csv"

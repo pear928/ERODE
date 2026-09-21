@@ -129,7 +129,7 @@ def main():
     processed = 0
     skipped = 0
 
-    with tqdm(total=total, desc="IDB Progress") as pbar:
+    with tqdm(total=total, desc="ERODE Progress") as pbar:
         for model in models:
             for scenario in scenarios:
                 for condition in conditions:
